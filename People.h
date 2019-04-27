@@ -4,6 +4,7 @@
 #include <iostream>
 
 #define first(L) L.first
+#define last(L) L.last
 #define prev(P) P->prev
 #define next(P) P->next
 #define info(P) P->info
@@ -11,17 +12,31 @@
 using namespace std;
 
 typedef int infotypePpl;
-typedef struct elmPpl adrPpl;
+typedef struct elmPpl *adrPpl;
 
 struct elmPpl{
     infotypePpl info;
-    adrHouse next;
-    adrHouse prev;
+    adrPpl next;
+    adrPpl prev;
 
 };
 
 struct listPpl{
     adrPpl first;
+    adrPpl last;
 };
 
+void createListPeople(listPpl &L);
+void createNewElmPeople(infotypePpl X, adrPpl &P);
+bool isEmptyP(listPpl L);
+
+void insertFirstP(listPpl &L, adrPpl P);
+void insertAfterP(adrPpl Prec, adrPpl P);
+void insertLastP(listPpl &L, adrPpl P);
+
+void deleteFirstP(listPpl &L, adrPpl &P);
+void deleteAfterP(adrPpl Prec, adrPpl &P);
+void deleteLastP(listPpl &L, adrPpl &P);
+
+adrPpl searchAddressP(listPpl L, infotypePpl X);
 #endif // PEOPLE_H_INCLUDED

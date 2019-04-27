@@ -1,8 +1,22 @@
 # depslib dependency file v1.0
-1556360086 source:c:\users\aldy\documents\github\tubes-std\house.cpp
+1556382805 source:c:\users\aldy\documents\github\tubes-std\house.cpp
+	"house.h"
 
-1555987808 source:c:\users\aldy\documents\github\tubes-std\main.cpp
-	<iostream>
+1556384354 source:c:\users\aldy\documents\github\tubes-std\main.cpp
+	"house.h"
 
 1556360128 source:c:\users\aldy\documents\github\tubes-std\people.cpp
+
+1555990351 source:c:\users\aldy\documents\github\tubes-std\list.cpp
+	"list.h"
+
+1556361535 c:\users\aldy\documents\github\tubes-std\list.h
+	<iostream>
+
+1556383939 c:\users\aldy\documents\github\tubes-std\house.h
+	<iostream>
+	"People.h"
+
+1556371881 c:\users\aldy\documents\github\tubes-std\people.h
+	<iostream>
 
