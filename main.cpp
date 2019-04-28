@@ -11,21 +11,20 @@ int main()
     insertFirstH(LH,P);
 
 
-
+    createNewElmHouse(3,P);
+    insertLastH(LH,P);
 
     createNewElmHouse(3,P);
     insertLastH(LH,P);
 
-    createNewElmHouse(4,P);
+    createNewElmHouse(99,P);
     adrHouse Prec = next(first(LH));
-    //cout<< info(Prec);
     insertAfterH(LH,Prec,P);
 
     createNewElmHouse(5,P);
     insertLastH(LH,P);
 
-
-
+    deleteAfterH(LH,Prec,P);
 
     printInfoH(LH);
 

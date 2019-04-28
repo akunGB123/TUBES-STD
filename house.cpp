@@ -2,6 +2,7 @@
 
 void createListHouse(listHouse &L){
     first(L) = NULL;
+    last(L) = NULL;
 }
 void createNewElmHouse(infotypeHouse X, adrHouse &P){
     P = new elmHouse;
@@ -19,6 +20,7 @@ bool isEmptyH(listHouse L){
 void insertFirstH(listHouse &L, adrHouse P){
     if(isEmptyH(L)){
         first(L) = P;
+        last(L) = P;
     }
     else {
         next(P) = first(L);
@@ -30,43 +32,79 @@ void insertAfterH(listHouse &L, adrHouse Prec, adrHouse P){
     /*adrHouse Q = first(L);
     while(next(Q) != NULL){
         Q = next(Q);
-    }*/
+    }
     prev(P) = Prec;
     next(P) = next(Prec);
     next(Prec) = P;cout<< "pler";
     prev(next(P)) = P;cout<< "pler";
-
+*/
+    if(first(L) == NULL){
+        insertFirstH(L,P);
+    }
+    else if(Prec == last(L)){
+        insertLastH(L,P);
+    }
+    else{
+        next(P) = next(Prec);
+        prev(P) = Prec;//cout<< "pler";
+        prev(next(Prec)) = P;
+        next(Prec) = P;
+    }
 }
 void insertLastH(listHouse &L, adrHouse P){
-    adrHouse Q = first(L);
     if(isEmptyH(L)){
         insertFirstH(L,P);
     }
     else{
-        while(next(Q) != NULL){
-            Q = next(Q);
-        }
-        prev(P) = Q;
-        next(Q) = P;
+        prev(P) = last(L);
+        next(last(L)) = P;
+        last(L) = P;
     }
 }
 
 
 void deleteFirstH(listHouse &L, adrHouse &P){
     P = first(L);
-    /*if(next(first(L)) == NULL){
-       first(L) = NULL;
+    if(isEmptyH(L)){
+        cout<< "List Kosong";
     }
-    else{*/
+    else if(first(L)==last(L)){
+        first(L) = NULL;
+        last(L) = NULL;;
+    }
+    else{
         first(L) = next(P);
         next(P) = NULL;
         prev(first(L)) = NULL;
-    //}
+    }
+    delete P;
 
 }
-void deleteAfterH(listHouse &L, adrHouse Prec, adrHouse &P);
+void deleteAfterH(listHouse &L, adrHouse Prec, adrHouse &P){
+    P = next(Prec);
+    if(first(L) == NULL){
+        cout<< "List Kosong";
+    }
+    else if(P = last(L)){
+        deleteLastH(L,P);
+    }
+    else{
+        last(L) = Prec;
+        next(last(L)) = NULL;
+        prev(P) = NULL;
+    }
+}
 void deleteLastH(listHouse &L, adrHouse &P){
-
+    P = last(L);
+    if(isEmptyH(L) || first(L)==last(L)){
+        deleteFirstH(L,P);
+    }
+    else{
+        last(L) = prev(P);
+        next(last(L)) = NULL;
+        prev(P) = NULL;
+    }
+    delete P;
 }
 
 void printInfoH(listHouse L){

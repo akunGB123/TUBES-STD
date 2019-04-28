@@ -40,5 +40,4 @@ void deleteLastH(listHouse &L, adrHouse &P);
 adrHouse searchAddressH(listHouse L, infotypeHouse X);
 void printInfoH(listHouse L);
 
-
 #endif // HOUSE_H_INCLUDED

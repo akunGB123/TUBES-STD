@@ -18,7 +18,6 @@ struct elmPpl{
     infotypePpl info;
     adrPpl next;
     adrPpl prev;
-
 };
 
 struct listPpl{
