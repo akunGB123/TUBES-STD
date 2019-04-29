@@ -1,6 +1,5 @@
 #ifndef PEOPLE_H_INCLUDED
 #define PEOPLE_H_INCLUDED
-
 #include <iostream>
 
 #define first(L) L.first
@@ -12,6 +11,13 @@
 using namespace std;
 
 typedef int infotypePpl;
+/*struct infotypePpl{
+    string nama_ppl;
+    int umur_ppl;
+    string kelamin_ppl;
+    string pekerjaan_ppl;
+
+};*/
 typedef struct elmPpl *adrPpl;
 
 struct elmPpl{
@@ -30,7 +36,7 @@ void createNewElmPeople(infotypePpl X, adrPpl &P);
 bool isEmptyP(listPpl L);
 
 void insertFirstP(listPpl &L, adrPpl P);
-void insertAfterP(adrPpl Prec, adrPpl P);
+void insertAfterP(listPpl &L, adrPpl Prec, adrPpl P);
 void insertLastP(listPpl &L, adrPpl P);
 
 void deleteFirstP(listPpl &L, adrPpl &P);
@@ -38,4 +44,5 @@ void deleteAfterP(adrPpl Prec, adrPpl &P);
 void deleteLastP(listPpl &L, adrPpl &P);
 
 adrPpl searchAddressP(listPpl L, infotypePpl X);
+void printInfoP(listPpl L);
 #endif // PEOPLE_H_INCLUDED

@@ -71,28 +71,36 @@ void deleteFirstH(listHouse &L, adrHouse &P){
     else if(first(L)==last(L)){
         first(L) = NULL;
         last(L) = NULL;;
+        delete P;
+
     }
     else{
         first(L) = next(P);
         next(P) = NULL;
         prev(first(L)) = NULL;
+        delete P;
+
     }
-    delete P;
 
 }
 void deleteAfterH(listHouse &L, adrHouse Prec, adrHouse &P){
-    P = next(Prec);
+    //P = next(Prec);
     if(first(L) == NULL){
         cout<< "List Kosong";
     }
-    else if(P = last(L)){
+    else if(Prec == NULL){
+    }
+    else if(next(Prec) == last(L)){
         deleteLastH(L,P);
     }
     else{
-        last(L) = Prec;
-        next(last(L)) = NULL;
+        next(Prec) = next(P);
+        prev(next(Prec)) = Prec;
+        next(P) = NULL;
         prev(P) = NULL;
+        delete P;
     }
+
 }
 void deleteLastH(listHouse &L, adrHouse &P){
     P = last(L);
@@ -103,10 +111,19 @@ void deleteLastH(listHouse &L, adrHouse &P){
         last(L) = prev(P);
         next(last(L)) = NULL;
         prev(P) = NULL;
+        delete P;
+
     }
-    delete P;
 }
 
+adrHouse searchAddressH(listHouse L, infotypeHouse X){
+    adrHouse P = first(L);
+    while(P != NULL && info(P) != X){
+        P = next(P);
+    }
+    return P;
+
+}
 void printInfoH(listHouse L){
     if(isEmptyH(L))
     {
