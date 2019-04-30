@@ -7,6 +7,7 @@
 #define prev(P) P->prev
 #define next(P) P->next
 #define info(P) P->info
+#define lpeople(P) P->lpeople
 
 using namespace std;
 
@@ -17,8 +18,10 @@ struct elmHouse{
     infotypeHouse info;
     adrHouse next;
     adrHouse prev;
+//    adrPpl
     listPpl lpeople;
 };
+
 
 struct listHouse{
     adrHouse first;
@@ -39,5 +42,9 @@ void deleteLastH(listHouse &L, adrHouse &P);
 
 adrHouse searchAddressH(listHouse L, infotypeHouse X);
 void printInfoH(listHouse L);
+
+int countHouse(listHouse L);
+int countPeople(listHouse LH, listPpl LP);
+int countPeople(listHouse LH, listPpl LP,infotypeHouse X);
 
 #endif // HOUSE_H_INCLUDED

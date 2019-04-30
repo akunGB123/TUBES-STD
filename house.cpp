@@ -9,6 +9,7 @@ void createNewElmHouse(infotypeHouse X, adrHouse &P){
     info(P) = X;
     prev(P) = NULL;
     next(P) = NULL;
+    createListPeople(lpeople(P));
 }
 
 bool isEmptyH(listHouse L){
@@ -89,6 +90,7 @@ void deleteAfterH(listHouse &L, adrHouse Prec, adrHouse &P){
         cout<< "List Kosong";
     }
     else if(Prec == NULL){
+        deleteFirstH(L,P);
     }
     else if(next(Prec) == last(L)){
         deleteLastH(L,P);
@@ -118,10 +120,13 @@ void deleteLastH(listHouse &L, adrHouse &P){
 
 adrHouse searchAddressH(listHouse L, infotypeHouse X){
     adrHouse P = first(L);
-    while(P != NULL && info(P) != X){
+    while(P != NULL){
+        if(info(P) == X){
+            return P;
+        }
         P = next(P);
     }
-    return P;
+    return NULL;
 
 }
 void printInfoH(listHouse L){
@@ -133,9 +138,43 @@ void printInfoH(listHouse L){
         adrHouse P = first(L);
         while(P != NULL)
         {
-            cout<<info(P)<<" ";
+            cout<<"Rumah nomor : "<<info(P)<<endl;
+            printInfoP(lpeople(P));cout<<endl;
             P = next(P);
+            cout<<"=================="<<endl;
         }
         cout<<endl;
     }
 }
+
+int countHouse(listHouse L){
+    int jml = 0;
+    adrHouse P = first(L);
+    while(P != NULL){
+        jml++;
+        P = next(P);
+    }
+    return jml;
+}
+
+/*int countPeople(listHouse LH, listPpl LP){
+    int jml = 0;
+    adrHouse PH = first(LH);
+    while(PH != NULL){
+        while(lpeople(PH) != NULL){
+            jml++;
+            lpeople(PH) = next(lpeople(PH));
+        }
+        PH = next(PH);
+    }
+    return jml;
+}
+
+int countPeople(listHouse LH, listPpl LP){
+    int jml = 0;
+    while (PH != NULL){
+        jml++;
+        PH = next(PH);
+    }
+
+}*/

@@ -9,6 +9,7 @@ void createNewElmPeople(infotypePpl X, adrPpl &P){
     info(P) = X;
     prev(P) = NULL;
     next(P) = NULL;
+
 }
 bool isEmptyP(listPpl L){
     if(first(L) == NULL){
@@ -77,6 +78,7 @@ void deleteAfterP(listPpl &L, adrPpl Prec, adrPpl &P){
         cout<< "List Kosong";
     }
     else if(Prec == NULL){
+        deleteFirstP(L,P);
     }
     else if(next(Prec) == last(L)){
         deleteLastP(L,P);
@@ -99,16 +101,18 @@ void deleteLastP(listPpl &L, adrPpl &P){
         next(last(L)) = NULL;
         prev(P) = NULL;
         delete P;
-
     }
 }
 
 adrPpl searchAddressP(listPpl L, infotypePpl X){
     adrPpl P = first(L);
-    while(P != NULL && info(P) != X){
+    while(P != NULL){
+        if(info(P).nama_ppl == X.nama_ppl){
+            return P;
+        }
         P = next(P);
     }
-    return P;
+    return NULL;
 }
 
 void printInfoP(listPpl L){
@@ -120,8 +124,12 @@ void printInfoP(listPpl L){
         adrPpl P = first(L);
         while(P != NULL)
         {
-            cout<<info(P)<<" ";
+            cout<<"Nama : "<<info(P).nama_ppl<<endl;
+            cout<<"Umur : "<<info(P).umur_ppl<<endl;
+            cout<<"Kelamin : "<<info(P).kelamin_ppl<<endl;
+            cout<<"Pekerjaan : "<<info(P).pekerjaan_ppl<<endl;
             P = next(P);
+            cout<<"=====================";
         }
         cout<<endl;
     }

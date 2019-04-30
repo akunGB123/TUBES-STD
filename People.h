@@ -10,14 +10,14 @@
 
 using namespace std;
 
-typedef int infotypePpl;
-/*struct infotypePpl{
+//typedef int infotypePpl;
+struct infotypePpl{
     string nama_ppl;
     int umur_ppl;
     string kelamin_ppl;
     string pekerjaan_ppl;
 
-};*/
+};
 typedef struct elmPpl *adrPpl;
 
 struct elmPpl{
@@ -40,7 +40,7 @@ void insertAfterP(listPpl &L, adrPpl Prec, adrPpl P);
 void insertLastP(listPpl &L, adrPpl P);
 
 void deleteFirstP(listPpl &L, adrPpl &P);
-void deleteAfterP(adrPpl Prec, adrPpl &P);
+void deleteAfterP(listPpl &L, adrPpl Prec, adrPpl &P);
 void deleteLastP(listPpl &L, adrPpl &P);
 
 adrPpl searchAddressP(listPpl L, infotypePpl X);
