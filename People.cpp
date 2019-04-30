@@ -129,7 +129,7 @@ void printInfoP(listPpl L){
             cout<<"Kelamin : "<<info(P).kelamin_ppl<<endl;
             cout<<"Pekerjaan : "<<info(P).pekerjaan_ppl<<endl;
             P = next(P);
-            cout<<"=====================";
+            cout<<"====================="<<endl;
         }
         cout<<endl;
     }

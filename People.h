@@ -10,7 +10,6 @@
 
 using namespace std;
 
-//typedef int infotypePpl;
 struct infotypePpl{
     string nama_ppl;
     int umur_ppl;

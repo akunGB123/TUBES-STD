@@ -30,15 +30,7 @@ void insertFirstH(listHouse &L, adrHouse P){
     }
 }
 void insertAfterH(listHouse &L, adrHouse Prec, adrHouse P){
-    /*adrHouse Q = first(L);
-    while(next(Q) != NULL){
-        Q = next(Q);
-    }
-    prev(P) = Prec;
-    next(P) = next(Prec);
-    next(Prec) = P;cout<< "pler";
-    prev(next(P)) = P;cout<< "pler";
-*/
+
     if(first(L) == NULL){
         insertFirstH(L,P);
     }
@@ -85,7 +77,6 @@ void deleteFirstH(listHouse &L, adrHouse &P){
 
 }
 void deleteAfterH(listHouse &L, adrHouse Prec, adrHouse &P){
-    //P = next(Prec);
     if(first(L) == NULL){
         cout<< "List Kosong";
     }

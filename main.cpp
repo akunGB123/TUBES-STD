@@ -20,7 +20,6 @@ int main()
     int jmlH;
     int jmlP;
     do{
-
     cout<<"1. Input daftar rumah dan penduduk "<<endl;
     cout<<"2. Lihat daftar rumah"<<endl;
     cout<<"3. Lihat daftar isi semua rumah"<<endl;
@@ -61,6 +60,7 @@ int main()
             insertLastP(lpeople(PH),PP);
             cout<<endl<< "Input orang lagi?(yes/no) : ";cin>>yesno;
             }while(yesno != "no");
+            system("pause");
             system("CLS");
         break;
         case 2:
@@ -71,10 +71,12 @@ int main()
                 PH = next(PH);
             }
             cout<<endl;
+            system("pause");
             system("CLS");
         break;
         case 3:
             printInfoH(LH);
+            system("pause");
             system("CLS");
         break;
         case 4:
@@ -83,6 +85,7 @@ int main()
             if(PH != NULL){
                 printInfoP(lpeople(PH));
             } else cout<< "Rumah tidak ditemukan"<<endl;
+            system("pause");
             system("CLS");
         break;
         case 5:
@@ -93,6 +96,7 @@ int main()
                 deleteAfterH(LH,PrecH,PH);
             } else cout<< "Rumah tidak ditemukan"<<endl;
             cout<< "Rumah berhasil di hapus"<<endl;
+            system("pause");
             system("CLS");
         break;
         case 6:
@@ -103,6 +107,7 @@ int main()
                 PH = next(PH);
             }
             cout<< "Rumah berhasil di hapus"<<endl;
+            system("pause");
             system("CLS");
         break;
 
@@ -110,6 +115,7 @@ int main()
             cout<<"Jumlah rumah : ";
             jmlH = countHouse(LH);
             cout<<jmlH<<endl;
+            system("pause");
             system("CLS");
         break;
 
@@ -124,58 +130,12 @@ int main()
                // jmlP = countPeople(lpeople(PH),LP);
                 cout<<"Jumlah penduduk : "<<jmlP;
             }
+            system("pause");
             system("CLS");
         break;
         }
     }
     }while(pil != 0);
-    /*
-    createNewElmHouse(10,PH);
-    insertLastH(LH,PH);
 
-    createNewElmPeople(1,PP);
-    PH = searchAddressH(LH,10);
-    insertLastP(lpeople(PH),PP);
-    createNewElmHouse(20,PH);
-    insertLastH(LH,PH);
-    printInfoH(LH);
-    adrHouse P;
-    listHouse LH;
-    listPpl LP;
-    createListHouse(LH);
-    createNewElmHouse(2,P);
-    insertFirstH(LH,P);
-
-
-    createNewElmHouse(3,P);
-    insertLastH(LH,P);
-
-    createNewElmHouse(5,P);
-    insertLastH(LH,P);
-
-    createNewElmHouse(4,P);
-    adrHouse Prec = next(first(LH));
-    insertAfterH(LH,Prec,P);
-
-    createNewElmHouse(6,P);
-    insertLastH(LH,P);
-    printInfoH(LH);
-
-    Prec = searchAddressH(LH,1);
-   // cout<< (Prec);
-    deleteAfterH(LH,Prec,P);
-
-
-    printInfoH(LH);
-
-    adrHouse Q = first(LH);
-    while(next(Q) != NULL){
-        Q = next(Q);
-    }
-    while(Q != NULL){
-        cout<< info(Q) << " ";
-        Q = prev(Q);
-    }*/
-    //cout<<info(next(next(first(LH))));
     return 0;
 }
