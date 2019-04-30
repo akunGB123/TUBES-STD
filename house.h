@@ -45,6 +45,7 @@ void printInfoH(listHouse L);
 
 int countHouse(listHouse L);
 int countPeople(listHouse LH, listPpl LP);
-int countPeople(listHouse LH, listPpl LP,infotypeHouse X);
+
+//int countPeople(listHouse LH, listPpl LP,infotypeHouse X);
 
 #endif // HOUSE_H_INCLUDED

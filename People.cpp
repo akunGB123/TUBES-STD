@@ -60,9 +60,8 @@ void deleteFirstP(listPpl &L, adrPpl &P){
     }
     else if(first(L)==last(L)){
         first(L) = NULL;
-        last(L) = NULL;;
+        last(L) = NULL;
         delete P;
-
     }
     else{
         first(L) = next(P);

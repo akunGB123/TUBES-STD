@@ -104,9 +104,18 @@ int main()
             PH = first(LH);
             while(PH != NULL){
                 PP = searchAddressP(lpeople(PH),deletePeople);
+                if(PP == first(lpeople(PH))){
+                    cout<< "pler";
+                    deleteFirstP(lpeople(PH),PP);
+                }
+                else{
+                    cout<< "pler";
+                    PrecP = prev(PP);
+                    deleteAfterP(lpeople(PH),PrecP,PP);
+                }
                 PH = next(PH);
             }
-            cout<< "Rumah berhasil di hapus"<<endl;
+            cout<< "Penduduk berhasil di hapus"<<endl;
             system("pause");
             system("CLS");
         break;
@@ -127,8 +136,9 @@ int main()
                 cout<< "Tidak ditemukan"<<endl;
             }
             else{
-               // jmlP = countPeople(lpeople(PH),LP);
-                cout<<"Jumlah penduduk : "<<jmlP;
+                jmlP = countPeople(LH,lpeople(PH));
+                cout<<"Jumlah penduduk : "<<jmlP<<endl;
+                jmlP = 0;
             }
             system("pause");
             system("CLS");

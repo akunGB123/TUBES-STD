@@ -55,7 +55,6 @@ void insertLastH(listHouse &L, adrHouse P){
     }
 }
 
-
 void deleteFirstH(listHouse &L, adrHouse &P){
     P = first(L);
     if(isEmptyH(L)){
@@ -148,24 +147,23 @@ int countHouse(listHouse L){
     return jml;
 }
 
-/*int countPeople(listHouse LH, listPpl LP){
-    int jml = 0;
-    adrHouse PH = first(LH);
-    while(PH != NULL){
-        while(lpeople(PH) != NULL){
-            jml++;
-            lpeople(PH) = next(lpeople(PH));
-        }
-        PH = next(PH);
-    }
-    return jml;
-}
-
 int countPeople(listHouse LH, listPpl LP){
-    int jml = 0;
-    while (PH != NULL){
-        jml++;
-        PH = next(PH);
+    int jml=0;
+    if(isEmptyH(LH))
+    {
+        cout<<"List Kosong";
+    }else{
+        if(isEmptyP(LP)){
+            cout<<"List Kosong";
+        }
+        else{
+            adrPpl PP = first(LP);
+            while(PP != NULL){
+                cout<<info(PP).nama_ppl;
+                jml++;
+                PP = next(PP);
+            }
+        }
     }
-
-}*/
+    return jml ;
+}
